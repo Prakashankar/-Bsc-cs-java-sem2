@@ -2,10 +2,36 @@ Index                                                     P.no
 1) Design a class Complex having a real part (x) and an imaginary part (y). Provide methods to perform the following on complex numbers: 
 a) Add two complex numbers. 
 b) Multiply two complex numbers. 
-c) toString() method to display complex numbers in the form: x + i y 1-22) Create a class TwoDim which contains private members as x and y coordinates in package P1. Define the default constructor, a parameterized constructor and override toString() method to display the co-ordinates. Now reuse this class and in package P2 create another class ThreeDim, adding a new dimension as z as its private member. Define the constructors for the subclass and override toString() method in the subclass also. Write appropriate methods to show dynamic method dispatch. The main() function should be in a package P.3-43) Define an abstract class Shape in package P1. Inherit two more classes: Rectangle in package P2 and Circle in package P3. Write a program to ask the user for the type of shape and then using the concept of dynamic method dispatch, display the area of the appropriate subclass. Also write appropriate methods to read the data. The main() function should not be in any package5-64) Create an exception subclass UnderAge, which prints “Under Age” along with the age value when an object of UnderAge class is printed in the catch statement. Write a class exceptionDemo in which the method test() throws UnderAge exception if the variable age passed to it as argument is less than 18. Write main() method also to show working of the program.75) Write a program to implement stack. Use exception handling to manage underflow and overflow conditions.8-106) Write a program that copies content of one file to another. Pass the names of the files through command-line arguments.117) Write a program to read a file and display only those lines that have the first two characters as '//' (Use try with resources).12-148) Write a program to create a frame using AWT. Implement mouseClicked(), mouseEntered() and mouseExited() events such that: 
+c) toString() method to display complex numbers in the form: x + i y 
+1-2
+2) Create a class TwoDim which contains private members as x and y coordinates in package P1. Define the default constructor, a parameterized constructor and override toString() method to display the co-ordinates. Now reuse this class and in package P2 create another class ThreeDim, adding a new dimension as z as its private member. Define the constructors for the subclass and override toString() method in the subclass also. Write appropriate methods to show dynamic method dispatch. The main() function should be in a package P.
+3-4
+3) Define an abstract class Shape in package P1. Inherit two more classes: Rectangle in package P2 and Circle in package P3. Write a program to ask the user for the type of shape and then using the concept of dynamic method dispatch, display the area of the appropriate subclass. Also write appropriate methods to read the data. The main() function should not be in any package
+5-6
+4) Create an exception subclass UnderAge, which prints â€œUnder Ageâ€ along with the age value when an object of UnderAge class is printed in the catch statement. Write a class exceptionDemo in which the method test() throws UnderAge exception if the variable age passed to it as argument is less than 18. Write main() method also to show working of the program.
+7
+5) Write a program to implement stack. Use exception handling to manage underflow and overflow conditions.
+8-10
+6) Write a program that copies content of one file to another. Pass the names of the files through command-line arguments.
+11
+7) Write a program to read a file and display only those lines that have the first two characters as '//' (Use try with resources).
+12-14
+8) Write a program to create a frame using AWT. Implement mouseClicked(), mouseEntered() and mouseExited() events such that: 
 a) Size of the frame should be tripled when mouse enters it.
  b) Frame should reduce to its original size when mouse is clicked in it. 
-c) Close the frame when mouse exits it.15-179) Using AWT, write a program to display a string in frame window with pink color as background18-2010) Using AWT, write a program to create two buttons named “Red” and “Blue”. When a button is pressed the background color should be set to the color named by the button’s label21-2311) Using AWT, write a program using appropriate adapter class to display the message (“Typed character is: ”) in the frame window when user types any key24-2512) Using AWT, write a program to create two buttons labelled ‘A’ and ‘B’. When button ‘A’ is pressed, it displays your personal information (Name, Course, Roll No, College) and when button ‘B’ is pressed, it displays your CGPA in previous semester26-2813) Rewrite all the above GUI programs using Swing29-onwards
+c) Close the frame when mouse exits it.
+15-17
+9) Using AWT, write a program to display a string in frame window with pink color as background
+18-20
+10) Using AWT, write a program to create two buttons named â€œRedâ€ and â€œBlueâ€. When a button is pressed the background color should be set to the color named by the buttonâ€™s label
+21-23
+11) Using AWT, write a program using appropriate adapter class to display the message (â€œTyped character is: â€) in the frame window when user types any key
+24-25
+12) Using AWT, write a program to create two buttons labelled â€˜Aâ€™ and â€˜Bâ€™. When button â€˜Aâ€™ is pressed, it displays your personal information (Name, Course, Roll No, College) and when button â€˜Bâ€™ is pressed, it displays your CGPA in previous semester
+26-28
+13) Rewrite all the above GUI programs using Swing
+29-onwards
+
 
 Page 1.
 1) Design a class Complex having a real part (x) and an imaginary part (y). Provide methods to perform the following on complex numbers: 
@@ -16,179 +42,136 @@ c) toString() method to display complex numbers in the form: x + i y
 import java.util.Scanner;
 
 public class Complex {
-    private  int x;
-    private  int y;
-    public Complex() {
-        Scanner sc= new Scanner(System.in);
-        System.out.println("Please enter real part value");
-        x=sc.nextInt();
-        System.out.println("Please enter imaginary part value");
-        y=sc.nextInt();
-    } 
-    public void add (Complex o) {
-        int x1;
-        int y1;
-        x1=x+o.x;
-        y1=y+o.y;
-        System.out.println("sum: "+x1+" + i"+y1);
-    } 
-    public void  multiply(Complex o) {
-        int x1;
-        int y1;
-        x1=x*o.x-y*o.y;
-        y1=x*o.y+y*o.x;
-        System.out.println("Multiplication: "+x1+" + i"+y1);
-    } 
+Â  Â  private Â int x;
+Â  Â  private Â int y;
+Â  Â  public Complex() {
+Â  Â  Â  Â  Scanner sc= new Scanner(System.in);
+Â  Â  Â  Â  System.out.println("Please enter real part value");
+Â  Â  Â  Â  x=sc.nextInt();
+Â  Â  Â  Â  System.out.println("Please enter imaginary part value");
+Â  Â  Â  Â  y=sc.nextInt();
+Â  Â  } 
+Â  Â  public void add (Complex o) {
+Â  Â  Â  Â  int x1;
+Â  Â  Â  Â  int y1;
+Â  Â  Â  Â  x1=x+o.x;
+Â  Â  Â  Â  y1=y+o.y;
+Â  Â  Â  Â  System.out.println("sum: "+x1+" + i"+y1);
+Â  Â  } 
+Â  Â  public void Â multiply(Complex o) {
+Â  Â  Â  Â  int x1;
+Â  Â  Â  Â  int y1;
+Â  Â  Â  Â  x1=x*o.x-y*o.y;
+Â  Â  Â  Â  y1=x*o.y+y*o.x;
+Â  Â  Â  Â  System.out.println("Multiplication: "+x1+" + i"+y1);
+Â  Â  } 
 
-    public String toString() {
-        return x+ " + i" + y;
-    }
-    public static void main(String[] args) {
-        Complex c1 = new Complex();
-        System.out.println("Complex 1: " + c1);
-        Complex c2 = new Complex();
-        System.out.println("Complex 2: " + c2);
-        c1.add(c2);
-        c1.multiply(c2);
-    }                                                                               
-Page 2
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                      
+Â  Â  public String toString() {
+Â  Â  Â  Â  return x+ " + i" + y;
+Â  Â  }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  Complex c1 = new Complex();
+Â  Â  Â  Â  System.out.println("Complex 1: " + c1);
+Â  Â  Â  Â  Complex c2 = new Complex();
+Â  Â  Â  Â  System.out.println("Complex 2: " + c2);
+Â  Â  Â  Â  c1.add(c2);
+Â  Â  Â  Â  c1.multiply(c2);
+Â  Â  }                                                                               
+                                                                                                                                                                   
 Page 3
 2) Create a class TwoDim which contains private members as x and y coordinates in package P1. Define the default constructor, a parameterized constructor and override toString() method to display the co-ordinates. Now reuse this class and in package P2 create another class ThreeDim, adding a new dimension as z as its private member. Define the constructors for the subclass and override toString() method in the subclass also. Write appropriate methods to show dynamic method dispatch. The main() function should be in a package P
 //two dim class
 package P1;
 
 public class Twodim {
-    private  int x;
-    private  int y;
-    public Twodim() {
-        this.x = 0;
-        this.y = 0;
-    }
-    public Twodim(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-    @Override
-    public String toString() {
-        return "Coordinate: x = " + x + " y = " + y; }
+Â  Â  private Â int x;
+Â  Â  private Â int y;
+Â  Â  public Twodim() {
+Â  Â  Â  Â  this.x = 0;
+Â  Â  Â  Â  this.y = 0;
+Â  Â  }
+Â  Â  public Twodim(int x, int y) {
+Â  Â  Â  Â  this.x = x;
+Â  Â  Â  Â  this.y = y;
+Â  Â  }
+Â  Â  @Override
+Â  Â  public String toString() {
+Â  Â  Â  Â  return "Coordinate: x = " + x + " y = " + y; }
 }
 
 //three dim
 package P2;
 import P1.Twodim;
 public class ThreeDim extends Twodim {
-    private final int z;
-    public ThreeDim() {
-        super(0,0);
-        this.z = 0;
-    }
-    public ThreeDim(int x, int y, int z) {
-        super(x, y);
-        this.z = z;
-    }
-    @Override
-    public String toString() {
-        return super.toString() + " z = " + z; }                               
+Â  Â  private final int z;
+Â  Â  public ThreeDim() {
+Â  Â  Â  Â  super(0,0);
+Â  Â  Â  Â  this.z = 0;
+Â  Â  }
+Â  Â  public ThreeDim(int x, int y, int z) {
+Â  Â  Â  Â  super(x, y);
+Â  Â  Â  Â  this.z = z;
+Â  Â  }
+Â  Â  @Override
+Â  Â  public String toString() {
+Â  Â  Â  Â  return super.toString() + " z = " + z; }                               
 }
 //Main Class
 package P3;
-import  P1.Twodim;
-import  P2.ThreeDim;
+import Â P1.Twodim;
+import Â P2.ThreeDim;
 public class Main {
-    public static void main(String[] args) {
-        Twodim ref;
-        ref = new Twodim(4, 8);
-        System.out.println(ref);
-        ref = new ThreeDim(9, 7, 6);
-        System.out.println(ref);
-    }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  Twodim ref;
+Â  Â  Â  Â  ref = new Twodim(4, 8);
+Â  Â  Â  Â  System.out.println(ref);
+Â  Â  Â  Â  ref = new ThreeDim(9, 7, 6);
+Â  Â  Â  Â  System.out.println(ref);
+Â  Â  }
 }
-
-
-
-Page 4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Page 5
 3) Define an abstract class Shape in package P1. Inherit two more classes: Rectangle in package P2 and Circle in package P3. Write a program to ask the user for the type of shape and then using the concept of dynamic method dispatch, display the area of the appropriate subclass. Also write appropriate methods to read the data. The main() function should not be in any package.
 package P1;
 public abstract class Shape {
-    protected abstract void getData();
-    public abstract void area();
+Â  Â  protected abstract void getData();
+Â  Â  public abstract void area();
 }
 
 package P2;
 import java.util.Scanner;
 import P1.*;
 public class Rectangle extends Shape {
-    private double length;
-    private double breadth;
-    protected void getData()
-    {
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Enter Length of Rectangle: ");
-        length = sc.nextDouble();
-        System.out.print("Enter Breadth of Rectangle: ");
-        breadth = sc.nextDouble();
-    }
-    public void area()
-    {   getData();
-        System.out.println(" Rectangle Area = " + length*breadth);
-    }
+Â  Â  private double length;
+Â  Â  private double breadth;
+Â  Â  protected void getData()
+Â  Â  {
+Â  Â  Â  Â  Scanner sc=new Scanner(System.in);
+Â  Â  Â  Â  System.out.print("Enter Length of Rectangle: ");
+Â  Â  Â  Â  length = sc.nextDouble();
+Â  Â  Â  Â  System.out.print("Enter Breadth of Rectangle: ");
+Â  Â  Â  Â  breadth = sc.nextDouble();
+Â  Â  }
+Â  Â  public void area()
+Â  Â  { Â  getData();
+Â  Â  Â  Â  System.out.println(" Rectangle Area = " + length*breadth);
+Â  Â  }
 }
 
 package P3;
 import java.util.Scanner;
 import P1.*;
 public class Circle extends Shape{
-    private double radius;
-    protected void getData()  {
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Enter Radius of Circle: ");
-        radius = sc.nextDouble();
-    }
-    public void area()  {
-        getData();
-       System.out.println("Circle area = "+ Math.PI*radius*radius);
-    }
+Â  Â  private double radius;
+Â  Â  protected void getData() Â {
+Â  Â  Â  Â  Scanner sc=new Scanner(System.in);
+Â  Â  Â  Â  System.out.print("Enter Radius of Circle: ");
+Â  Â  Â  Â  radius = sc.nextDouble();
+Â  Â  }
+Â  Â  public void area() Â {
+Â  Â  Â  Â  getData();
+Â  Â  Â  Â System.out.println("Circle area = "+ Math.PI*radius*radius);
+Â  Â  }
 }
 
 import java.util.Scanner;
@@ -196,71 +179,64 @@ import P1.Shape;
 import P2.Rectangle;
 import P3.Circle;
 public class Main1 {
-    public static void main(String[] args){
-        Shape ref;
-        int a;
-        Scanner sc=new Scanner(System.in);
-        System.out.println("==============\n  SHAPE TYPE  \n==============");
-        System.out.println(" (1) Rectangle\n (2) Circle");
-        System.out.print("Enter Choice: ");
-        a=sc.nextInt();
-        switch (a) {
-            case 1: 
-            {       ref = new Rectangle();
-                    ref.area();
-                    break;
-            }
-            case 2:
-            {
-                    ref = new Circle();
-                    ref.area();
-                    break;
-            }
-            default: System.err.println("Invalid Option");
-        }
-        
-    }
+Â  Â  public static void main(String[] args){
+Â  Â  Â  Â  Shape ref;
+Â  Â  Â  Â  int a;
+Â  Â  Â  Â  Scanner sc=new Scanner(System.in);
+Â  Â  Â  Â  System.out.println("==============\n Â SHAPE TYPE Â \n==============");
+Â  Â  Â  Â  System.out.println(" (1) Rectangle\n (2) Circle");
+Â  Â  Â  Â  System.out.print("Enter Choice: ");
+Â  Â  Â  Â  a=sc.nextInt();
+Â  Â  Â  Â  switch (a) {
+Â  Â  Â  Â  Â  Â  case 1: 
+Â  Â  Â  Â  Â  Â  { Â  Â  Â  ref = new Rectangle();
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ref.area();
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  break;
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  Â  Â  case 2:
+Â  Â  Â  Â  Â  Â  {
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ref = new Circle();
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ref.area();
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  break;
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  Â  Â  default: System.err.println("Invalid Option");
+Â  Â  Â  Â  }
+Â  Â  Â  Â  
+Â  Â  }
 }
-
-
-Page 6
-
-
-
-
 Page 7
-4) Create an exception subclass UnderAge, which prints “Under Age” along with the age value when an object of UnderAge class is printed in the catch statement. Write a class exceptionDemo in which the method test() throws UnderAge exception if the variable age passed to it as argument is less than 18. Write main() method also to show working of the program
+4) Create an exception subclass UnderAge, which prints â€œUnder Ageâ€ along with the age value when an object of UnderAge class is printed in the catch statement. Write a class exceptionDemo in which the method test() throws UnderAge exception if the variable age passed to it as argument is less than 18. Write main() method also to show working of the program
 package P4;
 
 public class UnderAge extends Exception{
-    final private int age;
-    public UnderAge(int age) {
-        this.age = age; }
-    @Override
-    public String getMessage() {
-        return "UnderAge: " + age + " is less than 18";
-    }
+Â  Â  final private int age;
+Â  Â  public UnderAge(int age) {
+Â  Â  Â  Â  this.age = age; }
+Â  Â  @Override
+Â  Â  public String getMessage() {
+Â  Â  Â  Â  return "UnderAge: " + age + " is less than 18";
+Â  Â  }
 }
 
 package P4;
 import java.util.Scanner;
 public class exceptionDemo {
-    static void test(int age) throws UnderAge {
-        if (age < 18)
-            throw new UnderAge(age);
-    }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        try (sc) {
-            System.out.print("Enter Age: ");
-            int age = sc.nextInt();
-            test(age);
-            System.out.println("Test Successful");
-        } catch (UnderAge e) {
-            System.err.println(e.getMessage());
-            System.out.println("Test Unsuccessful");
-        }
-    }
+Â  Â  static void test(int age) throws UnderAge {
+Â  Â  Â  Â  if (age < 18)
+Â  Â  Â  Â  Â  Â  throw new UnderAge(age);
+Â  Â  }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  Scanner sc = new Scanner(System.in);
+Â  Â  Â  Â  try (sc) {
+Â  Â  Â  Â  Â  Â  System.out.print("Enter Age: ");
+Â  Â  Â  Â  Â  Â  int age = sc.nextInt();
+Â  Â  Â  Â  Â  Â  test(age);
+Â  Â  Â  Â  Â  Â  System.out.println("Test Successful");
+Â  Â  Â  Â  } catch (UnderAge e) {
+Â  Â  Â  Â  Â  Â  System.err.println(e.getMessage());
+Â  Â  Â  Â  Â  Â  System.out.println("Test Unsuccessful");
+Â  Â  Â  Â  }
+Â  Â  }
 }
 
 
@@ -270,140 +246,106 @@ Page 8
 package P5;
 
 public class StackException extends Exception{
-    final private String message;
-    public StackException(String message) {
-        this.message = message;
-    }
-    @Override
-    public String getMessage() {
-        return this.message;
-    }
+Â  Â  final private String message;
+Â  Â  public StackException(String message) {
+Â  Â  Â  Â  this.message = message;
+Â  Â  }
+Â  Â  @Override
+Â  Â  public String getMessage() {
+Â  Â  Â  Â  return this.message;
+Â  Â  }
 }
 package P4;
 
 import P5.StackException;
 
 public class Stack {
-    // Top of the Stack
-    private int tos;
-    // Array of Elements
-    private final int[] array;
-    // Size of the Stack
-    final private int size;
-    public Stack(int size) {
-        this.tos = -1;
-        this.size = size;
-        this.array = new int[this.size];
-    }
-    public void push(int e) throws StackException {
-        if (tos == size - 1)
-            throw new StackException("Stack Overflow: could not push " + e);
-        else
-            this.array[++this.tos] = e;
-    }
-    public int pop() throws StackException {
-        if (this.tos < 0) {
-            throw new StackException("Stack Underflow:could not pop");
-        } else
-            return this.array[this.tos--];
-    }
-    public int getTOS() {
-        return this.tos;
-    }
-    @Override     public String toString() {
-        return "Stack<size=" + this.size + ">";
-        }
-    }
+Â  Â  // Top of the Stack
+Â  Â  private int tos;
+Â  Â  // Array of Elements
+Â  Â  private final int[] array;
+Â  Â  // Size of the Stack
+Â  Â  final private int size;
+Â  Â  public Stack(int size) {
+Â  Â  Â  Â  this.tos = -1;
+Â  Â  Â  Â  this.size = size;
+Â  Â  Â  Â  this.array = new int[this.size];
+Â  Â  }
+Â  Â  public void push(int e) throws StackException {
+Â  Â  Â  Â  if (tos == size - 1)
+Â  Â  Â  Â  Â  Â  throw new StackException("Stack Overflow: could not push " + e);
+Â  Â  Â  Â  else
+Â  Â  Â  Â  Â  Â  this.array[++this.tos] = e;
+Â  Â  }
+Â  Â  public int pop() throws StackException {
+Â  Â  Â  Â  if (this.tos < 0) {
+Â  Â  Â  Â  Â  Â  throw new StackException("Stack Underflow:could not pop");
+Â  Â  Â  Â  } else
+Â  Â  Â  Â  Â  Â  return this.array[this.tos--];
+Â  Â  }
+Â  Â  public int getTOS() {
+Â  Â  Â  Â  return this.tos;
+Â  Â  }
+Â  Â  @Override Â  Â  public String toString() {
+Â  Â  Â  Â  return "Stack<size=" + this.size + ">";
+Â  Â  Â  Â  }
+Â  Â  }
 
 package P4;
 import P5.StackException;
 
 import java.util.Random;
 public class Main2 {
-    public static void main(String[] args) {
-        int r;
-        Stack stack = new Stack(10);
-        Random random = new Random(1337);
-        System.out.println("Created stack of size 10...");
-        System.out.println("Pushing integers onto stack...");
-        while (true) {
-            r = random.nextInt(100);
-            System.out.println("Pushing " + r + "...");
-            try {
-                stack.push(r);
-                System.out.println("Elements in Stack = " + (stack.getTOS() + 1));
-            } catch (StackException e) {
-                System.err.println(e.getMessage());
-                break;
-            }
-        }
-        System.out.println("Popping integers from stack...");
-        while (true) {
-            System.out.println("Elements in Stack = " + (stack.getTOS() + 1));
-            try {
-                System.out.println("Popped " + stack.pop() + "...");
-            } catch (StackException e) {
-                System.err.println(e.getMessage());
-                break;
-            }
-        }
-    }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  int r;
+Â  Â  Â  Â  Stack stack = new Stack(10);
+Â  Â  Â  Â  Random random = new Random(1337);
+Â  Â  Â  Â  System.out.println("Created stack of size 10...");
+Â  Â  Â  Â  System.out.println("Pushing integers onto stack...");
+Â  Â  Â  Â  while (true) {
+Â  Â  Â  Â  Â  Â  r = random.nextInt(100);
+Â  Â  Â  Â  Â  Â  System.out.println("Pushing " + r + "...");
+Â  Â  Â  Â  Â  Â  try {
+Â  Â  Â  Â  Â  Â  Â  Â  stack.push(r);
+Â  Â  Â  Â  Â  Â  Â  Â  System.out.println("Elements in Stack = " + (stack.getTOS() + 1));
+Â  Â  Â  Â  Â  Â  } catch (StackException e) {
+Â  Â  Â  Â  Â  Â  Â  Â  System.err.println(e.getMessage());
+Â  Â  Â  Â  Â  Â  Â  Â  break;
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  }
+Â  Â  Â  Â  System.out.println("Popping integers from stack...");
+Â  Â  Â  Â  while (true) {
+Â  Â  Â  Â  Â  Â  System.out.println("Elements in Stack = " + (stack.getTOS() + 1));
+Â  Â  Â  Â  Â  Â  try {
+Â  Â  Â  Â  Â  Â  Â  Â  System.out.println("Popped " + stack.pop() + "...");
+Â  Â  Â  Â  Â  Â  } catch (StackException e) {
+Â  Â  Â  Â  Â  Â  Â  Â  System.err.println(e.getMessage());
+Â  Â  Â  Â  Â  Â  Â  Â  break;
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  }
+Â  Â  }
 }
-
-
-
-Page 10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Page 11
 6) Write a program that copies content of one file to another. Pass the names of the files through command-line arguments.
 package P4;
 import java.io.*;
 public class Copy {
-    public static void main(String[] args) 
-            throws Exception { if (args.length != 2) { 
-                System.err.println("Usage: java Copy <src> <dest>"); 
-            } else { 
-                int i; FileInputStream fin = new FileInputStream(args[0]); 
-                FileOutputStream fout = new FileOutputStream(args[1]); 
-                while ((i = fin.read()) != -1) { 
-                    fout.write(i); 
-                } 
-                fin.close(); 
-                fout.close(); 
-                System.out.println( 
-                        "Copied contents of" + args[0] + " to " + args[1] ); 
-            } 
-    } 
+Â  Â  public static void main(String[] args) 
+Â  Â  Â  Â  Â  Â  throws Exception { if (args.length != 2) { 
+Â  Â  Â  Â  Â  Â  Â  Â  System.err.println("Usage: java Copy <src> <dest>"); 
+Â  Â  Â  Â  Â  Â  } else { 
+Â  Â  Â  Â  Â  Â  Â  Â  int i; FileInputStream fin = new FileInputStream(args[0]); 
+Â  Â  Â  Â  Â  Â  Â  Â  FileOutputStream fout = new FileOutputStream(args[1]); 
+Â  Â  Â  Â  Â  Â  Â  Â  while ((i = fin.read()) != -1) { 
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  fout.write(i); 
+Â  Â  Â  Â  Â  Â  Â  Â  } 
+Â  Â  Â  Â  Â  Â  Â  Â  fin.close(); 
+Â  Â  Â  Â  Â  Â  Â  Â  fout.close(); 
+Â  Â  Â  Â  Â  Â  Â  Â  System.out.println( 
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  "Copied contents of" + args[0] + " to " + args[1] ); 
+Â  Â  Â  Â  Â  Â  } 
+Â  Â  } 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Page 12
 Q7Write a program to read a file and display only those lines that have the first two characters as '//' (Use try with resources).
 import java.awt.event.*;
@@ -415,51 +357,51 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Q7 extends Frame {
-    public Q7() {
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
-    }
-      public void paint (Graphics g)
-        { int a=1;
-            File f1 = new File("file.txt");
-            int x=10; int y=70;
-            try(BufferedReader br = new BufferedReader(new FileReader(f1))) {
-                Scanner sc = new Scanner(br);
-                String linae="";
-                StringBuilder sb = new StringBuilder(" ");
-                while(sc.hasNextLine()) {
-                    linae=sc.nextLine();
-                    int index=linae.indexOf("//");
-                    if (index==0)
-                    {
-                        g.drawString(linae,x,y);
-                        y+=10;
-                    }
-                }
+Â  Â  public Q7() {
+Â  Â  Â  Â  addWindowListener(new WindowAdapter() {
+Â  Â  Â  Â  Â  Â  public void windowClosing(WindowEvent e) {
+Â  Â  Â  Â  Â  Â  Â  Â  System.exit(0);
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  });
+Â  Â  }
+Â  Â  Â  public void paint (Graphics g)
+Â  Â  Â  Â  { int a=1;
+Â  Â  Â  Â  Â  Â  File f1 = new File("file.txt");
+Â  Â  Â  Â  Â  Â  int x=10; int y=70;
+Â  Â  Â  Â  Â  Â  try(BufferedReader br = new BufferedReader(new FileReader(f1))) {
+Â  Â  Â  Â  Â  Â  Â  Â  Scanner sc = new Scanner(br);
+Â  Â  Â  Â  Â  Â  Â  Â  String linae="";
+Â  Â  Â  Â  Â  Â  Â  Â  StringBuilder sb = new StringBuilder(" ");
+Â  Â  Â  Â  Â  Â  Â  Â  while(sc.hasNextLine()) {
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  linae=sc.nextLine();
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  int index=linae.indexOf("//");
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  if (index==0)
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  {
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  g.drawString(linae,x,y);
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  y+=10;
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  Â  Â  Â  Â  }
 
-            }
-            catch (IOException e) {
-                System.out.println("IOException in try block =>" + e.getMessage());
-            }
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  Â  Â  catch (IOException e) {
+Â  Â  Â  Â  Â  Â  Â  Â  System.out.println("IOException in try block =>" + e.getMessage());
+Â  Â  Â  Â  Â  Â  }
 
-        }
+Â  Â  Â  Â  }
 
-    public static void main(String[] args) {
-        Q7 appwin= new Q7();
-        appwin.setSize(new Dimension(370,700));
-        appwin.setTitle("d");
-        appwin.setVisible(true);
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  Q7 appwin= new Q7();
+Â  Â  Â  Â  appwin.setSize(new Dimension(370,700));
+Â  Â  Â  Â  appwin.setTitle("d");
+Â  Â  Â  Â  appwin.setVisible(true);
 
-    }
-
-
+Â  Â  }
 
 
 
-    }
+
+
+Â  Â  }
 
 Content inside file.txt
 //Cs/38
@@ -467,17 +409,6 @@ Content inside file.txt
 hello
 hi
 //Smily face
-
-
-
-Page14
-
-
-
-
-
-
-
 Page 15
 8) Write a program to create a frame using AWT. Implement mouseClicked(), mouseEntered() and mouseExited() events such that:
  a) Size of the frame should be tripled when mouse enters it. 
@@ -486,50 +417,50 @@ c) Close the frame when mouse exits it
 import java.awt.*;
 import java.awt.event.*;
 public class q8 extends Frame implements MouseListener{
-    String msg="";
-    int mouseX=0,mouseY=0;
-    public q8(){
-        addMouseListener(this);
-        addWindowListener(new WindowAdapter(){
-        });
-    }
-    public void mouseClicked(MouseEvent e) {
-        setSize(300,300);
-        msg="Mouse Clicked";
-        repaint();
-    }
+Â  Â  String msg="";
+Â  Â  int mouseX=0,mouseY=0;
+Â  Â  public q8(){
+Â  Â  Â  Â  addMouseListener(this);
+Â  Â  Â  Â  addWindowListener(new WindowAdapter(){
+Â  Â  Â  Â  });
+Â  Â  }
+Â  Â  public void mouseClicked(MouseEvent e) {
+Â  Â  Â  Â  setSize(300,300);
+Â  Â  Â  Â  msg="Mouse Clicked";
+Â  Â  Â  Â  repaint();
+Â  Â  }
 
-    @Override
-    public void mousePressed(MouseEvent e) {
+Â  Â  @Override
+Â  Â  public void mousePressed(MouseEvent e) {
 
-    }
+Â  Â  }
 
-    @Override
-    public void mouseReleased(MouseEvent e) {
+Â  Â  @Override
+Â  Â  public void mouseReleased(MouseEvent e) {
 
-    }
+Â  Â  }
 
-    public void mouseEntered(MouseEvent e) {
-        setSize(900,900);
-        msg="Mouse Entered";
-        repaint();
-    }
-    public void mouseExited(MouseEvent e){
-        System.out.println("Mouse exited");
-        dispose();
-    }
+Â  Â  public void mouseEntered(MouseEvent e) {
+Â  Â  Â  Â  setSize(900,900);
+Â  Â  Â  Â  msg="Mouse Entered";
+Â  Â  Â  Â  repaint();
+Â  Â  }
+Â  Â  public void mouseExited(MouseEvent e){
+Â  Â  Â  Â  System.out.println("Mouse exited");
+Â  Â  Â  Â  dispose();
+Â  Â  }
 
-    public void paint(Graphics g)
-    {
-        g.drawString(msg, 100, 70);
-    }
+Â  Â  public void paint(Graphics g)
+Â  Â  {
+Â  Â  Â  Â  g.drawString(msg, 100, 70);
+Â  Â  }
 
-    public static void main(String[] args) {
-        q8 gari= new q8();
-        gari.setSize(new Dimension(300,300));
-        gari.setTitle("q8");
-        gari.setVisible(true);
-    }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  q8 gari= new q8();
+Â  Â  Â  Â  gari.setSize(new Dimension(300,300));
+Â  Â  Â  Â  gari.setTitle("q8");
+Â  Â  Â  Â  gari.setVisible(true);
+Â  Â  }
 }
 a)
 
@@ -550,199 +481,146 @@ import java.awt.event.WindowEvent;
 import java.util.Scanner;
 
 public class Q9 extends Frame {
-    String a=" ";
-    int x=10;
-    int y=70;
-    public Q9() {
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
-    }
-      public void paint (Graphics g)
-        {
-            Scanner sc = new Scanner(System.in);
-            g.drawString(a,x,y);
-            y+=10;
-        }
+Â  Â  String a=" ";
+Â  Â  int x=10;
+Â  Â  int y=70;
+Â  Â  public Q9() {
+Â  Â  Â  Â  addWindowListener(new WindowAdapter() {
+Â  Â  Â  Â  Â  Â  public void windowClosing(WindowEvent e) {
+Â  Â  Â  Â  Â  Â  Â  Â  System.exit(0);
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  });
+Â  Â  }
+Â  Â  Â  public void paint (Graphics g)
+Â  Â  Â  Â  {
+Â  Â  Â  Â  Â  Â  Scanner sc = new Scanner(System.in);
+Â  Â  Â  Â  Â  Â  g.drawString(a,x,y);
+Â  Â  Â  Â  Â  Â  y+=10;
+Â  Â  Â  Â  }
 
-    public static void main(String[] args) {
-        Q9 appwin= new Q9();
-        appwin.setBackground(Color.pink);
-        appwin.setSize(new Dimension(370,700));
-        appwin.setTitle("d");
-        Scanner sc=new Scanner(System.in);
-        String a=" ";
-        a=sc.nextLine();
-        appwin.a=a;
-        appwin.repaint();
-        appwin.setVisible(true);
-            
-    }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  Q9 appwin= new Q9();
+Â  Â  Â  Â  appwin.setBackground(Color.pink);
+Â  Â  Â  Â  appwin.setSize(new Dimension(370,700));
+Â  Â  Â  Â  appwin.setTitle("d");
+Â  Â  Â  Â  Scanner sc=new Scanner(System.in);
+Â  Â  Â  Â  String a=" ";
+Â  Â  Â  Â  a=sc.nextLine();
+Â  Â  Â  Â  appwin.a=a;
+Â  Â  Â  Â  appwin.repaint();
+Â  Â  Â  Â  appwin.setVisible(true);
+Â  Â  Â  Â  Â  Â  
+Â  Â  }
 
 Input the string you want to show
 
 Java frame shows after pressing enter
 
 Program closes after pressing cross
-Page 19
 
-Page 20
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Page 21
-Q10Using AWT, write a program to create two buttons named “Red” and “Blue”. When a button is pressed the background color should be set to the color named by the button’s label.
+Q10Using AWT, write a program to create two buttons named â€œRedâ€ and â€œBlueâ€. When a button is pressed the background color should be set to the color named by the buttonâ€™s label.
 import java.awt.*;
 import java.awt.event.*;
 
 public class q10 extends Frame implements ActionListener{
-    String msg= "";
-    Button Blue,Red;
-    public q10(){
-        setLayout(new FlowLayout());
-        Blue=new Button("Blue");
-        Red=new Button("Red");
-        add(Blue);
-        add(Red);
-        Blue.addActionListener(this);
-        Red.addActionListener(this);
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
-    }
-    public void actionPerformed(ActionEvent ae){
-        String str = ae.getActionCommand();
-        if (str.equals("Blue")){
-            msg="Blue";
-        }
-        else{
-            msg="Red";
-        }
-        repaint();
-    }
-    public void paint(Graphics g){
-            if (msg=="Blue"){
-            setBackground(Color.blue);
-            repaint();
-            }
-            else if(msg=="Red")
-            {setBackground(Color.red);
-            repaint();}
-    }
+Â  Â  String msg= "";
+Â  Â  Button Blue,Red;
+Â  Â  public q10(){
+Â  Â  Â  Â  setLayout(new FlowLayout());
+Â  Â  Â  Â  Blue=new Button("Blue");
+Â  Â  Â  Â  Red=new Button("Red");
+Â  Â  Â  Â  add(Blue);
+Â  Â  Â  Â  add(Red);
+Â  Â  Â  Â  Blue.addActionListener(this);
+Â  Â  Â  Â  Red.addActionListener(this);
+Â  Â  Â  Â  addWindowListener(new WindowAdapter() {
+Â  Â  Â  Â  Â  Â  @Override
+Â  Â  Â  Â  Â  Â  public void windowClosing(WindowEvent e) {
+Â  Â  Â  Â  Â  Â  Â  Â  System.exit(0);
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  });
+Â  Â  }
+Â  Â  public void actionPerformed(ActionEvent ae){
+Â  Â  Â  Â  String str = ae.getActionCommand();
+Â  Â  Â  Â  if (str.equals("Blue")){
+Â  Â  Â  Â  Â  Â  msg="Blue";
+Â  Â  Â  Â  }
+Â  Â  Â  Â  else{
+Â  Â  Â  Â  Â  Â  msg="Red";
+Â  Â  Â  Â  }
+Â  Â  Â  Â  repaint();
+Â  Â  }
+Â  Â  public void paint(Graphics g){
+Â  Â  Â  Â  Â  Â  if (msg=="Blue"){
+Â  Â  Â  Â  Â  Â  setBackground(Color.blue);
+Â  Â  Â  Â  Â  Â  repaint();
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  Â  Â  else if(msg=="Red")
+Â  Â  Â  Â  Â  Â  {setBackground(Color.red);
+Â  Â  Â  Â  Â  Â  repaint();}
+Â  Â  }
 
 
-    public static void main(String[] args) {
-    q10 gari= new q10();
-    gari.setSize(new Dimension(250,150));
-    gari.setTitle("ButtonD");
-    gari.setVisible(true);
+Â  Â  public static void main(String[] args) {
+Â  Â  q10 gari= new q10();
+Â  Â  gari.setSize(new Dimension(250,150));
+Â  Â  gari.setTitle("ButtonD");
+Â  Â  gari.setVisible(true);
 
 }}
 
 
 
-
-
-
-Page 23
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Page 24
-11) Using AWT, write a program using appropriate adapter class to display the message (“Typed character is: ”) in the frame window when user types any key
+11) Using AWT, write a program using appropriate adapter class to display the message (â€œTyped character is: â€) in the frame window when user types any key
 import java.awt.event.*;
 import java.awt.*;
 
 public class q11 extends Frame{
- String msg="";
- int y=80;
- public q11()
- {
-     addKeyListener(new Mykeyadapter(this));
-     addWindowListener(new MyWindowadapter());
- }
- public void paint(Graphics g)
- {
-     char a=' ';
-     for (int i=0;i<msg.length();i++){
-     a=msg.charAt(i);
-     String ans= "Typed charachter is"+"<"+a+">";
-     g.drawString(ans,20,y);
-     y+=10;}
-     y=80;
- }
+Â String msg="";
+Â int y=80;
+Â public q11()
+Â {
+Â  Â  Â addKeyListener(new Mykeyadapter(this));
+Â  Â  Â addWindowListener(new MyWindowadapter());
+Â }
+Â public void paint(Graphics g)
+Â {
+Â  Â  Â char a=' ';
+Â  Â  Â for (int i=0;i<msg.length();i++){
+Â  Â  Â a=msg.charAt(i);
+Â  Â  Â String ans= "Typed charachter is"+"<"+a+">";
+Â  Â  Â g.drawString(ans,20,y);
+Â  Â  Â y+=10;}
+Â  Â  Â y=80;
+Â }
 
-    public static void main(String[] args) {
-        q11 gari= new q11();
-        gari.setSize(new Dimension(250,1000));
-        gari.setTitle("ButtonD");
-        gari.setVisible(true);
-    }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  q11 gari= new q11();
+Â  Â  Â  Â  gari.setSize(new Dimension(250,1000));
+Â  Â  Â  Â  gari.setTitle("ButtonD");
+Â  Â  Â  Â  gari.setVisible(true);
+Â  Â  }
 
 }
 class Mykeyadapter extends KeyAdapter{
-    String msg=" ";
-    q11 a;
-    public Mykeyadapter(q11 a){
-        this.a=a;
-    }
+Â  Â  String msg=" ";
+Â  Â  q11 a;
+Â  Â  public Mykeyadapter(q11 a){
+Â  Â  Â  Â  this.a=a;
+Â  Â  }
 
-    public void keyTyped(KeyEvent e) {
-        msg+=e.getKeyChar();
-        a.msg=this.msg;
-        a.repaint();
-    }
+Â  Â  public void keyTyped(KeyEvent e) {
+Â  Â  Â  Â  msg+=e.getKeyChar();
+Â  Â  Â  Â  a.msg=this.msg;
+Â  Â  Â  Â  a.repaint();
+Â  Â  }
 
 }
 class MyWindowadapter extends WindowAdapter{
-    public void windowClosing(WindowEvent e) {
-        System.exit(0);
-    }
+Â  Â  public void windowClosing(WindowEvent e) {
+Â  Â  Â  Â  System.exit(0);
+Â  Â  }
 }
 
 Page 25
@@ -753,62 +631,62 @@ Page 25
 
 
 Page 26
-12) Using AWT, write a program to create two buttons labelled ‘A’ and ‘B’. When button ‘A’ is pressed, it displays your personal information (Name, Course, Roll No, College) and when button ‘B’ is pressed, it displays your CGPA in previous semester.
+12) Using AWT, write a program to create two buttons labelled â€˜Aâ€™ and â€˜Bâ€™. When button â€˜Aâ€™ is pressed, it displays your personal information (Name, Course, Roll No, College) and when button â€˜Bâ€™ is pressed, it displays your CGPA in previous semester.
 
 import java.awt.*;
 import java.awt.event.*;
 
 public class q12 extends Frame implements ActionListener{
-    String msg= " ";
-    Button A,B;
-    public q12(){
-        setLayout(new FlowLayout());
-        A=new Button("A");
-        B=new Button("B");
-        add(A);
-        add(B);
-        A.addActionListener(this);
-        B.addActionListener(this);
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
-    }
-    public void actionPerformed(ActionEvent ae){
-        String str = ae.getActionCommand();
-        if (str.equals("A")){
-            msg="A";
-            repaint();
-        }
-        else{
-            msg="B";
-            repaint();
-        }
-        repaint();
-    }
-    public void paint(Graphics g){
-        if (msg=="A"){
-            g.drawString("Name=Garish Bansal",10,70);
-            g.drawString("Class= Bsc Computer Science",10,80);
-            g.drawString("Roll no=2k21/CS/38",10,90);
-            g.drawString("College=College of vocational studies",10,100);
-        }
-        else if(msg=="B")
-        {
-            g.drawString("CGPA=9.0",10,70);
-        }
-    }
+Â  Â  String msg= " ";
+Â  Â  Button A,B;
+Â  Â  public q12(){
+Â  Â  Â  Â  setLayout(new FlowLayout());
+Â  Â  Â  Â  A=new Button("A");
+Â  Â  Â  Â  B=new Button("B");
+Â  Â  Â  Â  add(A);
+Â  Â  Â  Â  add(B);
+Â  Â  Â  Â  A.addActionListener(this);
+Â  Â  Â  Â  B.addActionListener(this);
+Â  Â  Â  Â  addWindowListener(new WindowAdapter() {
+Â  Â  Â  Â  Â  Â  @Override
+Â  Â  Â  Â  Â  Â  public void windowClosing(WindowEvent e) {
+Â  Â  Â  Â  Â  Â  Â  Â  System.exit(0);
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  });
+Â  Â  }
+Â  Â  public void actionPerformed(ActionEvent ae){
+Â  Â  Â  Â  String str = ae.getActionCommand();
+Â  Â  Â  Â  if (str.equals("A")){
+Â  Â  Â  Â  Â  Â  msg="A";
+Â  Â  Â  Â  Â  Â  repaint();
+Â  Â  Â  Â  }
+Â  Â  Â  Â  else{
+Â  Â  Â  Â  Â  Â  msg="B";
+Â  Â  Â  Â  Â  Â  repaint();
+Â  Â  Â  Â  }
+Â  Â  Â  Â  repaint();
+Â  Â  }
+Â  Â  public void paint(Graphics g){
+Â  Â  Â  Â  if (msg=="A"){
+Â  Â  Â  Â  Â  Â  g.drawString("Name=Garish Bansal",10,70);
+Â  Â  Â  Â  Â  Â  g.drawString("Class= Bsc Computer Science",10,80);
+Â  Â  Â  Â  Â  Â  g.drawString("Roll no=2k21/CS/38",10,90);
+Â  Â  Â  Â  Â  Â  g.drawString("College=College of vocational studies",10,100);
+Â  Â  Â  Â  }
+Â  Â  Â  Â  else if(msg=="B")
+Â  Â  Â  Â  {
+Â  Â  Â  Â  Â  Â  g.drawString("CGPA=9.0",10,70);
+Â  Â  Â  Â  }
+Â  Â  }
 
 
-    public static void main(String[] args) {
-        q12 gari= new q12();
-        gari.setSize(new Dimension(250,150));
-        gari.setTitle("ButtonD");
-        gari.setVisible(true);
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  q12 gari= new q12();
+Â  Â  Â  Â  gari.setSize(new Dimension(250,150));
+Â  Â  Â  Â  gari.setTitle("ButtonD");
+Â  Â  Â  Â  gari.setVisible(true);
 
-    }}
+Â  Â  }}
 
 
 
@@ -835,60 +713,60 @@ class PaintPanel extends JPanel
 Insets ins;
 PaintPanel()
 {
-    setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+Â  Â  setBorder(BorderFactory.createLineBorder(Color.ORANGE));
 }
 
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        int x,y,x2,y2;
-        int height=getHeight();
-        int width=getWidth();
-        ins=getInsets();
-        File f1=new File("file.txt");
-        int z=10;
-        try(BufferedReader br= new BufferedReader(new FileReader(f1))){
-            Scanner sc= new Scanner(br);
-            String linae="";
-            while(sc.hasNextLine())
-            {
-                linae=sc.nextLine();
-                int index=linae.indexOf("//");
-                if (index==0)
-                {
-                    g.drawString(linae,10,z);
-                    z+=10;
-                }
-            }
-        }
-        catch (IOException e) {
-            System.out.println("IOException in try block =>" + e.getMessage());
-        }
+Â  Â  protected void paintComponent(Graphics g) {
+Â  Â  Â  Â  super.paintComponent(g);
+Â  Â  Â  Â  int x,y,x2,y2;
+Â  Â  Â  Â  int height=getHeight();
+Â  Â  Â  Â  int width=getWidth();
+Â  Â  Â  Â  ins=getInsets();
+Â  Â  Â  Â  File f1=new File("file.txt");
+Â  Â  Â  Â  int z=10;
+Â  Â  Â  Â  try(BufferedReader br= new BufferedReader(new FileReader(f1))){
+Â  Â  Â  Â  Â  Â  Scanner sc= new Scanner(br);
+Â  Â  Â  Â  Â  Â  String linae="";
+Â  Â  Â  Â  Â  Â  while(sc.hasNextLine())
+Â  Â  Â  Â  Â  Â  {
+Â  Â  Â  Â  Â  Â  Â  Â  linae=sc.nextLine();
+Â  Â  Â  Â  Â  Â  Â  Â  int index=linae.indexOf("//");
+Â  Â  Â  Â  Â  Â  Â  Â  if (index==0)
+Â  Â  Â  Â  Â  Â  Â  Â  {
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  g.drawString(linae,10,z);
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  z+=10;
+Â  Â  Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  }
+Â  Â  Â  Â  catch (IOException e) {
+Â  Â  Â  Â  Â  Â  System.out.println("IOException in try block =>" + e.getMessage());
+Â  Â  Â  Â  }
 
-    }
+Â  Â  }
 }
 
 public class sq7 {
-    JLabel jlab;
-    PaintPanel a;
-    sq7(){
-    JFrame jfrm= new JFrame("sq7");
-    jfrm.setSize(274,100);
-    jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    a=new PaintPanel();
-    jfrm.add(a);
-    jfrm.setVisible(true);
-    }
+Â  Â  JLabel jlab;
+Â  Â  PaintPanel a;
+Â  Â  sq7(){
+Â  Â  JFrame jfrm= new JFrame("sq7");
+Â  Â  jfrm.setSize(274,100);
+Â  Â  jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+Â  Â  a=new PaintPanel();
+Â  Â  jfrm.add(a);
+Â  Â  jfrm.setVisible(true);
+Â  Â  }
 
 
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new sq7();
-            }
-        });
-    }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  SwingUtilities.invokeLater(new Runnable() {
+Â  Â  Â  Â  Â  Â  @Override
+Â  Â  Â  Â  Â  Â  public void run() {
+Â  Â  Â  Â  Â  Â  Â  Â  new sq7();
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  });
+Â  Â  }
 
 
 
@@ -908,55 +786,55 @@ import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 
 public class sQ8 extends JFrame implements MouseListener {
-    String msg=" ";
-    sQ8(){
-        addMouseListener(this);
-        addWindowListener(new WindowAdapter() {
-        });
+Â  Â  String msg=" ";
+Â  Â  sQ8(){
+Â  Â  Â  Â  addMouseListener(this);
+Â  Â  Â  Â  addWindowListener(new WindowAdapter() {
+Â  Â  Â  Â  });
 
-    }
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        setSize(300,300);
-        msg="mouse clicked";
-        repaint();
-    }
+Â  Â  }
+Â  Â  @Override
+Â  Â  public void mouseClicked(MouseEvent e) {
+Â  Â  Â  Â  setSize(300,300);
+Â  Â  Â  Â  msg="mouse clicked";
+Â  Â  Â  Â  repaint();
+Â  Â  }
 
-    @Override
-    public void mousePressed(MouseEvent e) {
+Â  Â  @Override
+Â  Â  public void mousePressed(MouseEvent e) {
 
-    }
+Â  Â  }
 
-    @Override
-    public void mouseReleased(MouseEvent e) {
+Â  Â  @Override
+Â  Â  public void mouseReleased(MouseEvent e) {
 
-    }
+Â  Â  }
 
-    @Override
-    public void mouseEntered(MouseEvent e) {
-      setSize(900,900);
-      msg="Mouse entered";
-      repaint();
-    }
+Â  Â  @Override
+Â  Â  public void mouseEntered(MouseEvent e) {
+Â  Â  Â  setSize(900,900);
+Â  Â  Â  msg="Mouse entered";
+Â  Â  Â  repaint();
+Â  Â  }
 
-    @Override
-    public void mouseExited(MouseEvent e) {
-      System.out.println("mouse exited");
-        dispose();
-    }
+Â  Â  @Override
+Â  Â  public void mouseExited(MouseEvent e) {
+Â  Â  Â  System.out.println("mouse exited");
+Â  Â  Â  Â  dispose();
+Â  Â  }
 
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        g.drawString(msg, 100, 70);
-    }
+Â  Â  @Override
+Â  Â  public void paint(Graphics g) {
+Â  Â  Â  Â  super.paint(g);
+Â  Â  Â  Â  g.drawString(msg, 100, 70);
+Â  Â  }
 
-    public static void main(String[] args) {
-        sQ8 a=new sQ8();
-        a.setSize(new Dimension(300,300));
-        a.setTitle("sq8");
-        a.setVisible(true);
-    }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  sQ8 a=new sQ8();
+Â  Â  Â  Â  a.setSize(new Dimension(300,300));
+Â  Â  Â  Â  a.setTitle("sq8");
+Â  Â  Â  Â  a.setVisible(true);
+Â  Â  }
 }
 
 
@@ -975,48 +853,48 @@ import java.util.Scanner;
 
 class PaintPane extends JPanel
 {
-    Insets ins;
-    String ans=" ";
-    PaintPane()
-    {
-        setBorder(BorderFactory.createLineBorder(Color.ORANGE));
-    }
+Â  Â  Insets ins;
+Â  Â  String ans=" ";
+Â  Â  PaintPane()
+Â  Â  {
+Â  Â  Â  Â  setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+Â  Â  }
 
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        int x,y,x2,y2;
-        int height=getHeight();
-        int width=getWidth();
-        ins=getInsets();
-        g.drawString("hello",10,50);
+Â  Â  protected void paintComponent(Graphics g) {
+Â  Â  Â  Â  super.paintComponent(g);
+Â  Â  Â  Â  int x,y,x2,y2;
+Â  Â  Â  Â  int height=getHeight();
+Â  Â  Â  Â  int width=getWidth();
+Â  Â  Â  Â  ins=getInsets();
+Â  Â  Â  Â  g.drawString("hello",10,50);
 }}
 
 public class sq9 {
-    JLabel jlab;
-    PaintPane a;
-    sq9(){
-        JFrame jfrm= new JFrame("sq9");
-        jfrm.setSize(275,500);
-        jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        a=new PaintPane();
-        a.setBackground( Color.PINK);
-        jfrm.add(a);
-        jfrm.setVisible(true);
-        
-        
-    }
-   
+Â  Â  JLabel jlab;
+Â  Â  PaintPane a;
+Â  Â  sq9(){
+Â  Â  Â  Â  JFrame jfrm= new JFrame("sq9");
+Â  Â  Â  Â  jfrm.setSize(275,500);
+Â  Â  Â  Â  jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+Â  Â  Â  Â  a=new PaintPane();
+Â  Â  Â  Â  a.setBackground( Color.PINK);
+Â  Â  Â  Â  jfrm.add(a);
+Â  Â  Â  Â  jfrm.setVisible(true);
+Â  Â  Â  Â  
+Â  Â  Â  Â  
+Â  Â  }
+Â  Â 
 
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new sq9();
-                
-            }
-        });
-    }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  SwingUtilities.invokeLater(new Runnable() {
+Â  Â  Â  Â  Â  Â  @Override
+Â  Â  Â  Â  Â  Â  public void run() {
+Â  Â  Â  Â  Â  Â  Â  Â  new sq9();
+Â  Â  Â  Â  Â  Â  Â  Â  
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  });
+Â  Â  }
 
 
 
@@ -1025,7 +903,7 @@ public class sq9 {
 }
 
 
- 10) Using AWT, write a program to create two buttons named “Red” and “Blue”. When a button is pressed the background color should be set to the color named by the button’s label. 
+ 10) Using AWT, write a program to create two buttons named â€œRedâ€ and â€œBlueâ€. When a button is pressed the background color should be set to the color named by the buttonâ€™s label. 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -1034,75 +912,75 @@ import java.util.Scanner;
 
 class PaintPan extends JPanel
 {
-    Insets ins;
-    static String a=" ";
-    PaintPan()
-    {
-        setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+Â  Â  Insets ins;
+Â  Â  static String a=" ";
+Â  Â  PaintPan()
+Â  Â  {
+Â  Â  Â  Â  setBorder(BorderFactory.createLineBorder(Color.ORANGE));
 
-    }
+Â  Â  }
 
 
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        int x,y,x2,y2;
-        int height=getHeight();
-        int width=getWidth();
-        ins=getInsets();
-        if (a=="blue"){
-            setBackground(Color.blue);
-        }
-        else if(a=="Red"){
-            setBackground(Color.red);
-        }
+Â  Â  protected void paintComponent(Graphics g) {
+Â  Â  Â  Â  super.paintComponent(g);
+Â  Â  Â  Â  int x,y,x2,y2;
+Â  Â  Â  Â  int height=getHeight();
+Â  Â  Â  Â  int width=getWidth();
+Â  Â  Â  Â  ins=getInsets();
+Â  Â  Â  Â  if (a=="blue"){
+Â  Â  Â  Â  Â  Â  setBackground(Color.blue);
+Â  Â  Â  Â  }
+Â  Â  Â  Â  else if(a=="Red"){
+Â  Â  Â  Â  Â  Â  setBackground(Color.red);
+Â  Â  Â  Â  }
 
-    }
+Â  Â  }
 }
 public class Sq10 {
-    JLabel jlab;
-    PaintPan as;
-    Sq10(){
-        JFrame jfrm = new JFrame("Sq10");
-        jfrm.setSize(220,90);
-        jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        as=new PaintPan();
-        jfrm.add(as);
-        JButton a= new JButton("Blue");
-        JButton b= new JButton("Red");
-        a.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                PaintPan.a="blue";
-                jfrm.repaint();
-            }
-        });
-        b.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                PaintPan.a="Red";
-                jfrm.repaint();
-            }
-        });
-        as.add(a);
-        as.add(b);
+Â  Â  JLabel jlab;
+Â  Â  PaintPan as;
+Â  Â  Sq10(){
+Â  Â  Â  Â  JFrame jfrm = new JFrame("Sq10");
+Â  Â  Â  Â  jfrm.setSize(220,90);
+Â  Â  Â  Â  jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+Â  Â  Â  Â  as=new PaintPan();
+Â  Â  Â  Â  jfrm.add(as);
+Â  Â  Â  Â  JButton a= new JButton("Blue");
+Â  Â  Â  Â  JButton b= new JButton("Red");
+Â  Â  Â  Â  a.addActionListener(new ActionListener() {
+Â  Â  Â  Â  Â  Â  public void actionPerformed(ActionEvent e) {
+Â  Â  Â  Â  Â  Â  Â  Â  PaintPan.a="blue";
+Â  Â  Â  Â  Â  Â  Â  Â  jfrm.repaint();
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  });
+Â  Â  Â  Â  b.addActionListener(new ActionListener() {
+Â  Â  Â  Â  Â  Â  public void actionPerformed(ActionEvent e) {
+Â  Â  Â  Â  Â  Â  Â  Â  PaintPan.a="Red";
+Â  Â  Â  Â  Â  Â  Â  Â  jfrm.repaint();
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  });
+Â  Â  Â  Â  as.add(a);
+Â  Â  Â  Â  as.add(b);
 
-        jlab= new JLabel("press a button");
-        as.add(jlab);
-        jfrm.setVisible(true);
-    }
+Â  Â  Â  Â  jlab= new JLabel("press a button");
+Â  Â  Â  Â  as.add(jlab);
+Â  Â  Â  Â  jfrm.setVisible(true);
+Â  Â  }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new Sq10();
-            }
-        });
-    }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  SwingUtilities.invokeLater(new Runnable() {
+Â  Â  Â  Â  Â  Â  public void run() {
+Â  Â  Â  Â  Â  Â  Â  Â  new Sq10();
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  });
+Â  Â  }
 }
 
 
 
 
 
-11) Using AWT, write a program using appropriate adapter class to display the message (“Typed character is: ”) in the frame window when user types any key. 
+11) Using AWT, write a program using appropriate adapter class to display the message (â€œTyped character is: â€) in the frame window when user types any key. 
 import javax.swing.*;
 import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
@@ -1111,64 +989,64 @@ import java.awt.event.KeyEvent;
 
 class Paintp extends JPanel {
 
-    Insets ins;
-    String msg=" ";
-    int yy=80;
+Â  Â  Insets ins;
+Â  Â  String msg=" ";
+Â  Â  int yy=80;
 
-     Paintp() {
-         setBorder(BorderFactory.createLineBorder(Color.orange));
-     }
+Â  Â  Â Paintp() {
+Â  Â  Â  Â  Â setBorder(BorderFactory.createLineBorder(Color.orange));
+Â  Â  Â }
 
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        int x,y,x2,y2;
-        int height=getHeight();
-        int width=getWidth();
-        ins=getInsets();
-        char a=' ';
-        for(int i=0;i<msg.length();i++)
-        {
-            a=msg.charAt(i);
-            String ans= "Typed charachter is"+"<"+a+">";
-            g.drawString(ans,20,yy);
-            yy+=10;
-        }
-        yy=80;
-    }
+Â  Â  @Override
+Â  Â  public void paint(Graphics g) {
+Â  Â  Â  Â  super.paint(g);
+Â  Â  Â  Â  int x,y,x2,y2;
+Â  Â  Â  Â  int height=getHeight();
+Â  Â  Â  Â  int width=getWidth();
+Â  Â  Â  Â  ins=getInsets();
+Â  Â  Â  Â  char a=' ';
+Â  Â  Â  Â  for(int i=0;i<msg.length();i++)
+Â  Â  Â  Â  {
+Â  Â  Â  Â  Â  Â  a=msg.charAt(i);
+Â  Â  Â  Â  Â  Â  String ans= "Typed charachter is"+"<"+a+">";
+Â  Â  Â  Â  Â  Â  g.drawString(ans,20,yy);
+Â  Â  Â  Â  Â  Â  yy+=10;
+Â  Â  Â  Â  }
+Â  Â  Â  Â  yy=80;
+Â  Â  }
 }
 public class sq11 {
-    Paintp ans;
-    sq11(){
-        JFrame jfrm=new JFrame("Sq11");
-        jfrm.setSize(600,600);
-        jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jfrm.setVisible(true);
-        ans=new Paintp();
-        jfrm.add(ans);
-        jfrm.addKeyListener(new Myadape(ans));
-        jfrm.addWindowListener(new MyWindowadapter());
-    }
-    public static void main(String[] args) {
-       SwingUtilities.invokeLater(new Runnable() {
-           @Override
-           public void run() {
-                new sq11();
-           }
-       });
-    }
+Â  Â  Paintp ans;
+Â  Â  sq11(){
+Â  Â  Â  Â  JFrame jfrm=new JFrame("Sq11");
+Â  Â  Â  Â  jfrm.setSize(600,600);
+Â  Â  Â  Â  jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+Â  Â  Â  Â  jfrm.setVisible(true);
+Â  Â  Â  Â  ans=new Paintp();
+Â  Â  Â  Â  jfrm.add(ans);
+Â  Â  Â  Â  jfrm.addKeyListener(new Myadape(ans));
+Â  Â  Â  Â  jfrm.addWindowListener(new MyWindowadapter());
+Â  Â  }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â SwingUtilities.invokeLater(new Runnable() {
+Â  Â  Â  Â  Â  Â @Override
+Â  Â  Â  Â  Â  Â public void run() {
+Â  Â  Â  Â  Â  Â  Â  Â  new sq11();
+Â  Â  Â  Â  Â  Â }
+Â  Â  Â  Â });
+Â  Â  }
 }
 
 class Myadape extends KeyAdapter{
-    String msg=" ";
-    Paintp a;
-    public Myadape(Paintp a){this.a=a;
-    }
-    public void keyTyped(KeyEvent e){
-        msg+=e.getKeyChar();
-        a.msg=this.msg;
-        a.repaint();
-    }
+Â  Â  String msg=" ";
+Â  Â  Paintp a;
+Â  Â  public Myadape(Paintp a){this.a=a;
+Â  Â  }
+Â  Â  public void keyTyped(KeyEvent e){
+Â  Â  Â  Â  msg+=e.getKeyChar();
+Â  Â  Â  Â  a.msg=this.msg;
+Â  Â  Â  Â  a.repaint();
+Â  Â  }
 
 }
 
@@ -1178,7 +1056,7 @@ class Myadape extends KeyAdapter{
 
 
 
-12) Using AWT, write a program to create two buttons labelled ‘A’ and ‘B’. When button ‘A’ is pressed, it displays your personal information (Name, Course, Roll No, College) and when button ‘B’ is pressed, it displays your CGPA in previous semester.
+12) Using AWT, write a program to create two buttons labelled â€˜Aâ€™ and â€˜Bâ€™. When button â€˜Aâ€™ is pressed, it displays your personal information (Name, Course, Roll No, College) and when button â€˜Bâ€™ is pressed, it displays your CGPA in previous semester.
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -1186,74 +1064,74 @@ import java.awt.event.ActionListener;
 
 class PaintPa extends JPanel
 {
-    Insets ins;
-    static String a=" ";
-    PaintPa()
-    {
-        setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+Â  Â  Insets ins;
+Â  Â  static String a=" ";
+Â  Â  PaintPa()
+Â  Â  {
+Â  Â  Â  Â  setBorder(BorderFactory.createLineBorder(Color.ORANGE));
 
-    }
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        int x,y,x2,y2;
-        int height=getHeight();
-        int width=getWidth();
-        ins=getInsets();
+Â  Â  }
+Â  Â  protected void paintComponent(Graphics g) {
+Â  Â  Â  Â  super.paintComponent(g);
+Â  Â  Â  Â  int x,y,x2,y2;
+Â  Â  Â  Â  int height=getHeight();
+Â  Â  Â  Â  int width=getWidth();
+Â  Â  Â  Â  ins=getInsets();
 
-        if (a=="A"){
-            g.drawString("Name=Garish Bansal",100,100);
-            g.drawString("Class= Bsc Computer Science", 100 ,110);
-            g.drawString("Roll no=2k21/CS/38",100,120);
-            g.drawString("College=College of vocational studies",100,130);
-            repaint();
-        }
-        else if(a=="B"){
-            g.drawString("CGPA=9.0",100,100);
-            repaint();
-        }
+Â  Â  Â  Â  if (a=="A"){
+Â  Â  Â  Â  Â  Â  g.drawString("Name=Garish Bansal",100,100);
+Â  Â  Â  Â  Â  Â  g.drawString("Class= Bsc Computer Science", 100 ,110);
+Â  Â  Â  Â  Â  Â  g.drawString("Roll no=2k21/CS/38",100,120);
+Â  Â  Â  Â  Â  Â  g.drawString("College=College of vocational studies",100,130);
+Â  Â  Â  Â  Â  Â  repaint();
+Â  Â  Â  Â  }
+Â  Â  Â  Â  else if(a=="B"){
+Â  Â  Â  Â  Â  Â  g.drawString("CGPA=9.0",100,100);
+Â  Â  Â  Â  Â  Â  repaint();
+Â  Â  Â  Â  }
 
-    }
+Â  Â  }
 }
 
 public class Sq12 {
-    JLabel jlab;
-    PaintPa as;
-    Sq12(){
-        JFrame jfrm = new JFrame("Sq10");
-        jfrm.setSize(500,500);
-        jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        as=new PaintPa();
-        jfrm.add(as);
-        JButton A= new JButton("A");
-        JButton B= new JButton("B");
-        A.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                PaintPa.a="A";
-                jfrm.repaint();
-                System.out.println("a");
+Â  Â  JLabel jlab;
+Â  Â  PaintPa as;
+Â  Â  Sq12(){
+Â  Â  Â  Â  JFrame jfrm = new JFrame("Sq10");
+Â  Â  Â  Â  jfrm.setSize(500,500);
+Â  Â  Â  Â  jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+Â  Â  Â  Â  as=new PaintPa();
+Â  Â  Â  Â  jfrm.add(as);
+Â  Â  Â  Â  JButton A= new JButton("A");
+Â  Â  Â  Â  JButton B= new JButton("B");
+Â  Â  Â  Â  A.addActionListener(new ActionListener() {
+Â  Â  Â  Â  Â  Â  public void actionPerformed(ActionEvent e) {
+Â  Â  Â  Â  Â  Â  Â  Â  PaintPa.a="A";
+Â  Â  Â  Â  Â  Â  Â  Â  jfrm.repaint();
+Â  Â  Â  Â  Â  Â  Â  Â  System.out.println("a");
 
-            }
-        });
-        B.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                PaintPa.a="B";
-                jfrm.repaint();
-                System.out.println("h");
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  });
+Â  Â  Â  Â  B.addActionListener(new ActionListener() {
+Â  Â  Â  Â  Â  Â  public void actionPerformed(ActionEvent e) {
+Â  Â  Â  Â  Â  Â  Â  Â  PaintPa.a="B";
+Â  Â  Â  Â  Â  Â  Â  Â  jfrm.repaint();
+Â  Â  Â  Â  Â  Â  Â  Â  System.out.println("h");
 
-            }
-        });
-        as.add(A);
-        as.add(B);
-        jfrm.setVisible(true);
-    }
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  });
+Â  Â  Â  Â  as.add(A);
+Â  Â  Â  Â  as.add(B);
+Â  Â  Â  Â  jfrm.setVisible(true);
+Â  Â  }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new Sq12();
-            }
-        });
-    }
+Â  Â  public static void main(String[] args) {
+Â  Â  Â  Â  SwingUtilities.invokeLater(new Runnable() {
+Â  Â  Â  Â  Â  Â  public void run() {
+Â  Â  Â  Â  Â  Â  Â  Â  new Sq12();
+Â  Â  Â  Â  Â  Â  }
+Â  Â  Â  Â  });
+Â  Â  }
 }
 
 
