@@ -397,10 +397,6 @@ public class Q7 extends Frame {
 
     }
 
-
-
-
-
     }
 
 Content inside file.txt
